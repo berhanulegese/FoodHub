@@ -1,2 +1,1 @@
-Excellent learning experience completing this project as part of the Python Foundations course in the PGP-AIML-BA-UTA-INTL program at Great Learning.
-Perform an exploratory data analysis and provide actionable insights for a food aggregator company to get a fair idea about the demand of different restaurants and cuisines, which will help them enhance their customer experience and improve the business
+Performed an exploratory data analysis and provide actionable insights for a food aggregator company to get a fair idea about the demand of different restaurants and cuisines, which will help them enhance their customer experience and improve the business
