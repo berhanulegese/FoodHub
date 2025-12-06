@@ -1,6 +1,60 @@
 # FoodHub EDA
 
-Exploratory data analysis (EDA) for a food aggregator to understand demand across restaurants and cuisines, with the goal of improving customer experience and business performance.
+Exploratory data analysis (EDA) to help a food aggregator understand demand patterns across restaurants and cuisines, and identify levers to improve customer experience and business performance. The analysis investigates what customers order, when they order, how much they spend, and how operational timings (prep and delivery) relate to satisfaction (ratings).
+
+## What This Project Does
+
+- Quantifies demand by cuisine and restaurant (orders, share, spend proxy).
+- Analyzes ordering patterns across weekdays vs weekends.
+- Profiles spend behavior (average order value, distribution, outliers).
+- Studies operational timings: preparation vs delivery time, and their correlation.
+- Examines ratings (including missing “Not given”) and relationships to timings and cost.
+- Surfaces high- and low-performing cuisines/restaurants for targeted actions.
+
+## Dataset
+
+Source: `foodhub_order.csv` (included). Columns:
+
+- `order_id`: Unique order identifier.
+- `customer_id`: Customer identifier (enables basic customer-level aggregation).
+- `restaurant_name`: Restaurant fulfilling the order.
+- `cuisine_type`: Cuisine for the restaurant/order.
+- `cost_of_the_order`: Basket value for the order.
+- `day_of_the_week`: `Weekday` or `Weekend` (ordering context).
+- `rating`: Customer rating or `Not given` when missing.
+- `food_preparation_time`: Minutes spent preparing the order.
+- `delivery_time`: Minutes spent delivering the order.
+
+Notes and assumptions:
+
+- Ratings contain a `Not given` category, treated as missing and profiled separately.
+- Monetary values are used comparatively (e.g., average order value) rather than as audited revenue.
+- No geolocation or exact timestamps are present; time-of-day and distance effects are not modeled.
+
+## Business Questions Addressed
+
+- Which cuisines and restaurants drive the most orders and spend?
+- How do weekday and weekend demand patterns differ?
+- What is the typical order value and its variance across cuisines/restaurants?
+- How do preparation and delivery times interact, and where are the bottlenecks?
+- Do longer prep/delivery times correlate with lower ratings?
+- Which areas present opportunities (e.g., slow but popular, fast but low-rated)?
+
+## Analysis Outline (in the Notebook)
+
+1. Load and inspect data; handle missing values (ratings).
+2. Sanity checks and type conversions where needed.
+3. Univariate profiles: cuisines, restaurants, spend, timings, ratings.
+4. Bivariate analysis: timings vs ratings; cost vs cuisine/restaurant; weekday vs weekend.
+5. Ranking/segmentation: top cuisines/restaurants by orders and average order value.
+6. Operational insights: identifying slow prep or delivery clusters for improvement.
+7. Recommendations: data-backed actions for menus, promotions, and operations.
+
+## Outputs
+
+- Interactive notebook: `Food Hub Full Code.ipynb` (main analysis).
+- HTML export: `Full-Code-version.html` (viewable without running code).
+- Visuals: charts rendered in the notebook (optionally exportable to a `reports/` folder).
 
 ## Repository Contents
 
